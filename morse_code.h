@@ -10,23 +10,23 @@
 #define MORSE_CODE_H_
 
 //=====================================================
-//		Setup output pin.
+//	Setup output pin.
 //=====================================================
 #define MORSE_DDR			DDRB
 #define MORSE_PORT			PORTB
 #define MORSE_PIN			PINB0
 
 //=====================================================
-//		Morse code timing.
+//	Morse code timing.
 //=====================================================
-#define morse_dot_time 		100
-#define morse_dash_time 	280
-#define morse_next_b_time 	100
-#define morse_next_l_time 	280		
-#define morse_space_time 	650		
+#define morse_dot_time		100
+#define morse_dash_time		280
+#define morse_next_b_time	100
+#define morse_next_l_time	280
+#define morse_space_time	650
 
 //=====================================================
-//		Functions.
+//	Functions.
 //=====================================================
 #define morse_init(void) MORSE_DDR |= (1 << MORSE_PIN);
 extern void morse_transmit(char num, char data);
@@ -34,7 +34,7 @@ extern void morse_puts(char *puts);
 extern void morse_putc(char putc);
 
 //=====================================================
-//		ASCII to Morse Code Conversion Array.
+//	ASCII to Morse Code Conversion Array.
 //=====================================================
 extern const char ascii_to_morse[95][2];
 

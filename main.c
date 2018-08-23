@@ -14,10 +14,10 @@
 int main(void)
 {
 	morse_init();
-    while (1) 
-    {
+	while (1) 
+	{
 		morse_puts("Hello, world!");
 		_delay_ms(3000);
-    }
+	}
 }
 

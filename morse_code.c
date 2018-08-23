@@ -52,7 +52,7 @@ void morse_putc(char putc)
 		MORSE_PORT &=~(1 << MORSE_PIN);
 		_delay_ms(morse_space_time);
 	}
-	if (putc >= 32 && putc <= 126)
+	if (putc >= 33 && putc <= 126)
 	{
 		morse_transmit(pgm_read_byte(&(ascii_to_morse[putc-32][0])),pgm_read_byte(&(ascii_to_morse[putc-32][1])));
 	}
