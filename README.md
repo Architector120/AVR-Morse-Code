@@ -1,2 +1,1 @@
-# AVR-Morse-Code
-AVR Morse Code Generator
+# AVR Morse Code Generator (Simple Ver.)
