@@ -19,11 +19,19 @@
 //=====================================================
 //	Morse code timing.
 //=====================================================
-#define morse_dot_time		100
-#define morse_dash_time		280
-#define morse_next_b_time	100
-#define morse_next_l_time	280
-#define morse_space_time	650
+//Approximate number of words per minute
+//Set the value from 1 to 1200
+#define MORSE_WPM			12
+// sending dot
+#define MORSE_DOT			60000/MORSE_WPM/50
+// sending dash
+#define MORSE_DASH			MORSE_DOT * 3
+// inter-character gap
+#define MORSE_CHAR_GAP		MORSE_DOT
+// gap between letters
+#define MORSE_LETTER_GAP	MORSE_DOT * 3
+// gap between words
+#define MORSE_WORD_GAP		MORSE_DOT * 7
 
 //=====================================================
 //	Functions.

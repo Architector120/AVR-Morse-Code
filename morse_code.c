@@ -20,20 +20,20 @@ void morse_transmit(char num, char data)
 			if(data & 0b10000000)
 			{
 				MORSE_PORT |= (1 << MORSE_PIN);
-				_delay_ms(morse_dash_time);
+				_delay_ms(MORSE_DASH);
 				MORSE_PORT &=~(1 << MORSE_PIN);
-				_delay_ms(morse_next_b_time);
+				_delay_ms(MORSE_CHAR_GAP);
 			}
 			else
 			{
 				MORSE_PORT |= (1 << MORSE_PIN);
-				_delay_ms(morse_dot_time);
+				_delay_ms(MORSE_DOT);
 				MORSE_PORT &=~(1 << MORSE_PIN);
-				_delay_ms(morse_next_b_time);
+				_delay_ms(MORSE_CHAR_GAP);
 			}
 			data = data << 1;
 		}
-		_delay_ms(morse_next_l_time);
+		_delay_ms(MORSE_LETTER_GAP);
 	}
 }
 
@@ -50,7 +50,7 @@ void morse_putc(char putc)
 	if (putc == 32)
 	{
 		MORSE_PORT &=~(1 << MORSE_PIN);
-		_delay_ms(morse_space_time);
+		_delay_ms(MORSE_WORD_GAP);
 	}
 	if (putc >= 33 && putc <= 126)
 	{
